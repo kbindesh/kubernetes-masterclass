@@ -5,7 +5,7 @@
 ## Course contents
 
 | Serial.No | Module                                         | Sub-modules                                  |
-| :-------: | ---------------------------------------------- | -------------------------------------------- |
+| :-------: | :--------------------------------------------- | :------------------------------------------- |
 |     1     | **Introducing Kubernetes**                     | What is Kubernetes?                          |
 |           |                                                | Understanding container orchestration        |
 |           |                                                | Kubernetes key concepts                      |
