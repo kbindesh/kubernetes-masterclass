@@ -4,7 +4,7 @@ In this module, we're going to learn the following topics:
 
 - **Softwares/Tools used with Kubernetes**
 
-- **-Installing and configuring a Kubernetes cluster**
+- **Installing and configuring a Kubernetes cluster**
 
 - **Using `minikube` to set up a single node Kubernetes cluster**
 
