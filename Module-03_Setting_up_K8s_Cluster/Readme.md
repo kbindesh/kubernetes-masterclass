@@ -2,17 +2,17 @@
 
 In this module, we're going to learn the following topics:
 
-- **01-Hands-on Kubernetes tooling**
+- **Softwares/Tools used with Kubernetes**
 
-- **02-Installing and configuring a Kubernetes cluster**
+- **-Installing and configuring a Kubernetes cluster**
 
-- **03-Using `minikube` to set up a single node Kubernetes cluster**
+- **Using `minikube` to set up a single node Kubernetes cluster**
 
-- **04-Using `kubeadm` to install a basic (multi-node) Kubernetes cluster**
+- **Using `kubeadm` to install a basic (multi-node) Kubernetes cluster**
 
-- **05-Setting up a highly available cluster with kubeadm**
+- **Setting up a highly available cluster with kubeadm**
 
-## Step-01: Kubernetes tooling
+## 01. Tools used with Kubernetes
 
 - There are some widely used Kubernetes tools available in the market to interact with the Kubernetes cluster. Some of them are as follows:
 

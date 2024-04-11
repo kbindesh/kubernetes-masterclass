@@ -8,7 +8,7 @@
   - Internet connection
   - Container or virtual machine manager, such as: Docker, QEMU, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware Fusion/Workstation
 
-## minikube on EC2 Instance (Amazon Linux)
+## `minikube` on EC2 Instance (Amazon Linux)
 
 ### Step-01: Create an AWS EC2 instance
 
@@ -19,7 +19,7 @@
 - VPC & Subnet: Default
 - Key Pair: <create_a_new_keypair>
 
-### Step-02: Install Docker Engine
+### Step-02: Install `Docker Engine`
 
 ```
 # Install Docker on Amazon linux 2
@@ -70,7 +70,7 @@ docker ps
 
 ```
 
-### Step-04: Install and Configure minikube (kubernetes distro)
+### Step-04: Install and Configure `minikube` (kubernetes distro)
 
 - Once both Docker and Kubectl are installed, you may use following set of commands to install `minikube`:
 
@@ -91,7 +91,7 @@ shutdown -r now
  # Start the minikube cluster
  minikube start
 
- # If all goes well, you will see a set of messages appear on the console.
+ # You will see a set of messages appear on the console.
 
  # Check the minikube k8s status | should be in running state
  minikube status
@@ -100,4 +100,6 @@ shutdown -r now
 
 ## References
 
-[Amazon Linux 2023 FAQs](https://aws.amazon.com/linux/amazon-linux-2023/faqs/)
+- [Amazon Linux 2023 FAQs](https://aws.amazon.com/linux/amazon-linux-2023/faqs/)
+- [Minikube Official Documentation](https://minikube.sigs.k8s.io/docs/)
+- [Install and setup kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
