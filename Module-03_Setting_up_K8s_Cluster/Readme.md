@@ -2,14 +2,10 @@
 
 In this module, we're going to learn the following topics:
 
-- **Softwares/Tools used with Kubernetes**
-
+- **Tools used with Kubernetes**
 - **Installing and configuring a Kubernetes cluster**
-
 - **Using `minikube` to set up a single node Kubernetes cluster**
-
 - **Using `kubeadm` to install a basic (multi-node) Kubernetes cluster**
-
 - **Setting up a highly available cluster with kubeadm**
 
 ## 01. Tools used with Kubernetes
@@ -26,9 +22,3 @@ In this module, we're going to learn the following topics:
   - monitoring and visualizing events and logs
 
 - [Install and Set Up kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-
-```
-
-```
-
-###

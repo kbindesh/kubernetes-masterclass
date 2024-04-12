@@ -109,6 +109,28 @@ Here are some of the benefits of containers compared to more conventional softwa
 
 ## 05. Kubernetes Distributions
 
+Some of the most popular Kubernetes distributions are as follows:
+
+- minikube (for learning)
+- kubeadm
+- k3s (IoT & Edge computing)
+- k3d (Rancher Lab's minimal distro)
+- Rancher Kubernetes (Open source)
+- Docker Kubernetes Service (Open source)
+- Amazon Elastic Kubernetes Service (Cloud managed)
+- Azure Kubernetes Service (Cloud managed)
+- Google Kubernetes Engine (Cloud managed)
+- RedHat Openshift (Enterprise)
+- Tanzu Kubernetes Grid (Enterprise)
+- Mirantis (Enterprise)
+- Elastisys Compliant Kubernetes (Enterprise)
+
+### Components of Kubernetes distribution
+
+- Container Runtime
+- Storage
+- Networking
+
 ## References
 
 - [Kubernetes Cotnainer Runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)

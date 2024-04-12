@@ -96,6 +96,34 @@ shutdown -r now
  # Check the minikube k8s status | should be in running state
  minikube status
 
+# Verifying the minikube cluster installation
+kubectl get node
+```
+
+- Your minikube cluster contains one node that serves as both the control plane and worker node.
+- That means that once you have it set up, you can start to schedule workloads in your local Kubernetes cluster.
+
+### Step-06: Configuring the minikube cluster (OPTIONAL)
+
+- The **minikube config set** command will help you apply the settings such as _CPU_ and _memory_ that you'll allocate to the minikube cluster.
+
+```
+minikube stop
+
+minikube config set memory 8192
+
+minikube config set cpus 4
+
+minikube start
+
+```
+
+### Step-07: Deleting a minikube cluster (OPTIONAL)
+
+- The following command deletes all local Kubernetes clusters and all profiles:
+
+```
+minikube delete --all
 ```
 
 ## References
