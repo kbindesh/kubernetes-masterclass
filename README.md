@@ -55,7 +55,7 @@
 |           |                                                         | Monitoring applications on Kubernetes Cluster     |
 |           |                                                         | Managing logs at the cluster node level           |
 |           |                                                         | Managing logs at the Pod level                    |
-|    10     | **Running Kubernetes in `Production`**                  | Understanding managed K8s in Cloud                |
+|    10     | **Running `Kubernetes in Production`**                  | Understanding managed K8s in Cloud                |
 |           |                                                         | Handling infrastructure at scale                  |
 |           |                                                         | Cost Management with Kubernetes                   |
 |    11     | **`Troubleshooting` Kubernetes Cluster**                | Troubleshooting cluster components & Applications |
