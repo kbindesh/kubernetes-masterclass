@@ -51,7 +51,7 @@ spec:
 kubectl apply -f <your-spec>.yaml
 ```
 
-### Step-03: Understanding a multi-container pod
+### 03. Understanding a multi-container pod
 
 - Multi-container pods are simply pods with more than one container working together as a single unit.
   <img src="images/multicontpod.png" width=400 height=270>
