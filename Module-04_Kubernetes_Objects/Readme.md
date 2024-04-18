@@ -119,10 +119,10 @@ $ kubectl apply -f pod.yaml
 ### Common Kubernetes manifest fields
 
 - All the kubernetes manifests have a few required fields and some object specific fields.
-  - apiVersion:
-  - kind:
-  - metadata:
-  - spec:
+  - **apiVersion**
+  - **kind**
+  - **metadata**
+  - **spec**
 
 ## References
 
