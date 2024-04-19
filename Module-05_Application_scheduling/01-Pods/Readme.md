@@ -15,10 +15,16 @@
 # Syntax to create a Pod
 kubectl run <pod-name> --image=<image-name:image-tag>
 
-# Create a Pod with nginx:alpine image
+# Example-01: Create a Pod with nginx:alpine image
 kubectl run bin-nginx-pod --image=nginx:alpine
 
 # You will see the output is returned as created
+
+# Example-02: Create a Pod with busybox image
+kubectl run busybox --rm -it --image=busybox /bin/sh
+
+# You can also deploy a nginx image and then export the YAML definition
+kubectl run nginx --image=nginx --dry-run -o yaml > pod-sample.yaml
 ```
 
 - **`Describe a pod` to check the Pod's current status and historical events**:
@@ -79,3 +85,5 @@ spec:
     image: busybox
     command: ['sh', '-c', 'while true; do sleep 3600; done;']
 ```
+
+### 04. Pods with resources limits

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: melonapp-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: melonapp-rs
+  template:
+    metadata:
+      labels:
+        app: melonapp-rs
+    spec:
+      containers:
+        - name: nginx
+          image: nginx

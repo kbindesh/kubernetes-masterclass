@@ -100,7 +100,85 @@ kubectl set image deployment/app-deployment nginx=nginx:1.25.5 --record
 # You can either use --record flag or --record=true flag.
 
 # Describe deployment to check the image update
-kubectl describe deployment deployment.yaml
+kubectl describe deployment app-deployment
 ```
 
 - **Rolling updates in declarative way**
+
+  - Create a deployment manifest, say **deployment.yaml**
+    ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: nginx-deployment
+      labels:
+        app: nginx
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: nginx
+      template:
+        metadata:
+        labels:
+          app: nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+          - containerPort: 80
+    ```
+  - Create a deployment by executing the above manifest
+    ```
+    kubectl apply -f deployment.yaml
+    ```
+  - Now, update the container image (from nginx:latest to nginx:1.25.5) by editing the manifest:
+
+    ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: nginx-deployment
+      labels:
+        app: nginx
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: nginx
+      template:
+        metadata:
+        labels:
+          app: nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx:1.25.5
+          ports:
+          - containerPort: 80
+    ```
+
+  - Deploy the updated deployment manifest:
+    ```
+    kubectl apply -f deployment.yaml
+    ```
+  - Verify the deployment image update
+    ```
+    # Describe deployment to check the image update
+    kubectl describe deployment app-deployment
+    ```
+
+- **Rollback a Deployment**
+
+  - Rollback allows us to revert our application to a previous state (deployment) seamlessly.
+
+    ```
+    # To quickly recover if you need to perform a rollback
+    kubectl rollout undo deployments <deployment_name>
+
+    kubectl rollout undo deployments app-deployment
+
+    # To verify the rolled back image (prev)
+    kubectl describe deployment <deployment_name>
+    ```
