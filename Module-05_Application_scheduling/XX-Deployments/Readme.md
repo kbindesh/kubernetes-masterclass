@@ -9,9 +9,9 @@
 
 - Deployments provide a way to define a desired state for the replica pod.
 
-### Step-01: Create a Deployment in declarative way
+### Step-01: Create a Deployment manifest (declarative way)
 
-- Write a YAML definition for Deployment object:
+Write a YAML definition for Deployment object:
 
 ```
 apiVersion: apps/v1
