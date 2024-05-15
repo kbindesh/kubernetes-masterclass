@@ -84,24 +84,10 @@ eksctl get cluster
 
 ### 03. Create Node Group with additional add-ons in public subnets
 
+- Note: Create an EC2 keypair (here, it is binWinWebServerKey) for your EKS nodes manually and pass the same keypair name in the following command:
 ```
-# Create Public Node Group
-eksctl create nodegroup --cluster=eksdemo1 \
---region=us-east-1 \
---name=eksdemo1-ng-public1 \
---node-type=t3.small \
---nodes=2 \
---nodes-min=2 \
---nodes-max=4 \
---node-volume-size=20 \
---ssh-access \
---ssh-public-key=eks-nodegrp-keypair \
---managed \
---asg-access \
---external-dns-access \
---full-ecr-access \
---appmesh-access \
---alb-ingress-access
+# Create public Node Group
+eksctl create nodegroup --cluster=labekscluster --region=us-east-1 --name=eksdemo1-ng-public1 --node-type=t3.small --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=binWinWebServerKey --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
 ```
 
 ## Step-05: Verify EKS Cluster & Worker nodes
