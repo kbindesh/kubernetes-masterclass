@@ -1,0 +1,13 @@
+# Persistent volume on minikube - https://minikube.sigs.k8s.io/docs/handbook/persistent_volumes/
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0001
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /data/pv0001/
+    type: DirectoryOrCreate

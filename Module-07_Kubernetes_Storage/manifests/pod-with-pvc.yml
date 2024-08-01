@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: task-pv-pod-new
+spec:
+  volumes:
+    - name: task-pv-storage
+      persistentVolumeClaim:
+        claimName: "data-pvc"
+      restartPolicy: Always
+  containers:
+    - name: busybox
+      image: busybox
+      command: ["/bin/sh", "-c", "while true; do sleep 3600; done"]
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/tmp/data"
+          name: task-pv-storage
