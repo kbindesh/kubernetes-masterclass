@@ -54,7 +54,7 @@ Let's understand how k8s networking works in the following use-cases:
 
   OR
 
-  kubectl exec multi-container-pod -c busybox-sidecar -- cat index.html
+  kubectl exec multi-container-pod -c busybox-helper -- cat index.html
   ```
 
 ### 1.2 Pod-to-Pod communication
@@ -67,7 +67,7 @@ Let's understand how k8s networking works in the following use-cases:
 
   ```
   # Create an nginx pod
-  kubectl run nginx-pod --image=nginx –-port=8080
+  kubectl run nginx-pod --image=nginx --port=8080
 
   # To check the Pod IP address
   kubectl get pod nginx-pod -o wide
@@ -133,12 +133,15 @@ Let's understand how k8s networking works in the following use-cases:
   kubectl get pods
 
   # Exposing the pods to the K8 cluster | Ceate a ClusterIP service
-  kubectl expose deployment nginx --type=ClusterIP --port 8080 --name=melon-service --target-port 80
+  kubectl expose deployment nginx --type=ClusterIP --port 8080 --name=bin-clusterip-svc --target-port 80
 
   # List all the services in default namespace
   kubectl get svc
 
   [Observe the ClusterIP service IP and the port details]
+
+  # Get the list of all the endpoints | Observe the one associated with bin-clusterip-svc
+  kubectl get endpoints
   ```
 
 - **Declarative way**
@@ -158,6 +161,7 @@ Let's understand how k8s networking works in the following use-cases:
       - protocol: TCP
         port: 8080
         targetPort: 80
+
   ```
 
 - In the preceding manifest, we can see there's a section called _selector_. This section has a key-value pair, **app:nginx**, that has a _label sector_.
@@ -171,20 +175,20 @@ Let's understand how k8s networking works in the following use-cases:
   metadata:
     name: nginx
   spec:
-    selector:
-      matchLabels:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2
+  template:
+    metadata:
+      labels:
         app: nginx
-    replicas: 2
-    template:
-      metadata:
-        labels:
-          app: nginx
-        spec:
-          containers:
-            - name: nginx
-              image: nginx
-              ports:
-              - containerPort: 80
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
   ```
 
 - In the preceding manifest, we can see that there is a section to specify the selector and we used the same key-value pair, **app: nginx**, to map the ClusterIP specification so that it worked as expected.
@@ -220,7 +224,7 @@ Let's understand how k8s networking works in the following use-cases:
   kubectl create deployment webapp-deployment --image=nginx --replicas=3
 
   # Expose the above created deployment (webapp-deployment) using NodePort
-  kubectl expose deployment webapp-deployment --port=8080 --targetport=80 --type=NodePort
+  kubectl expose deployment webapp-deployment --port=8080 --target-port=80 --type=NodePort
 
   ```
 
