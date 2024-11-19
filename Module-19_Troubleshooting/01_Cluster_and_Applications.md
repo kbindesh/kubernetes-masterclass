@@ -60,7 +60,7 @@ kubectl get nodes
   love is Ready.
 
 | Node Status          | Description                                                                           |
-| -------------------- | ------------------------------------------------------------------------------------- |
+| :------------------- | :------------------------------------------------------------------------------------ |
 | _Ready_              | Ready The node is healthy and ready to accept pods.                                   |
 | _DiskPressure_       | The disk capacity is low.                                                             |
 | _MemoryPressure_     | The node memory is low.                                                               |
@@ -160,4 +160,4 @@ systemctl restart kubelet
 
 ### 3.3 Troubleshooting the failing Pods
 
-### 3.4 Troubleshooting the init Containers
+### 3.4 Troubleshooting the init ontainers

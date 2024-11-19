@@ -1,4 +1,4 @@
-# Seting up Elastic Kubernetes Service (EKS) Cluster
+# Setting up Elastic Kubernetes Service (EKS) Cluster from Windows (local) machine
 
 - In this section, we will learn how to setup an Amazon EKS cluster, a Production-grade Kubernetes distribution.
 - In order to setup the EKS cluster, we will perform following steps:
@@ -85,6 +85,7 @@ eksctl get cluster
 ### 03. Create Node Group with additional add-ons in public subnets
 
 - Note: Create an EC2 keypair (here, it is binWinWebServerKey) for your EKS nodes manually and pass the same keypair name in the following command:
+
 ```
 # Create public Node Group
 eksctl create nodegroup --cluster=labekscluster --region=us-east-1 --name=eksdemo1-ng-public1 --node-type=t3.small --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=binWinWebServerKey --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
@@ -118,5 +119,3 @@ kubectl get nodes -o wide
 # Our kubectl context should be automatically changed to new cluster
 kubectl config view --minify
 ```
-
-## Step-06:
