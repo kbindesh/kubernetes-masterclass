@@ -1,4 +1,4 @@
-# Setting up Elastic Kubernetes Service (EKS) Cluster from Windows (local) machine
+# Setting up Elastic Kubernetes Service (EKS) Cluster from Windows 11 machine (local)
 
 - In this section, we will learn how to setup an Amazon EKS cluster, a Production-grade Kubernetes distribution.
 - In order to setup the EKS cluster, we will perform following steps:
